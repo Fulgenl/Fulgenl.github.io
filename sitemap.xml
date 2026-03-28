@@ -1,30 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.fullgen.ga/i cv.html</loc>
+        <loc>https://fullgen.github.io/portfolio/</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.fullgen.ga/i diseno.html</loc>
+        <loc>https://fullgen.github.io/portfolio/fotografia.html</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fullgen.ga/i editorial.html</loc>
+        <loc>https://fullgen.github.io/portfolio/diseno-grafico.html</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fullgen.ga/i fotografia.html</loc>
+        <loc>https://fullgen.github.io/portfolio/editorial.html</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fullgen.ga/i ilustracion.html</loc>
+        <loc>https://fullgen.github.io/portfolio/video.html</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fullgen.ga/i proyectos.html</loc>
+        <loc>https://fullgen.github.io/portfolio/edicion.html</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fullgen.ga/i ui ux.html</loc>
+        <loc>https://fullgen.github.io/portfolio/ilustracion.html</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fullgen.ga/i video.html</loc>
+        <loc>https://fullgen.github.io/portfolio/ux-ui.html</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fullgen.ga/index.html</loc>
+        <loc>https://fullgen.github.io/portfolio/ux-ui.html</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fullgen.github.io/portfolio/proyectos.html</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
     </url>
 </urlset>

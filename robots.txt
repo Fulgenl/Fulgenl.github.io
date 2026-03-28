@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fullgen.github.io/portfolio/sitemap.xml
