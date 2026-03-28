@@ -187,30 +187,18 @@ const experienceData = {
         icon: 'assets/icons/ico prac Ondaluz TV.svg',
         date: '03 - 06/2010',
         description: 'Prácticas de realización de audiovisuales. Diseño de cabeceras, printers y cartones publicitarios, cámara de plató y editor de vídeo.',
-        images: [
-            'assets/trabajos/Ondaluz/Trab Ondaluz 1.jpg',
-            'assets/trabajos/Ondaluz/Trab Ondaluz 2.jpg',
-        ]
     },
     televigo: {
         name: 'Televigo',
         icon: 'assets/icons/ico prac Televigo.svg',
         date: '08 - 09/2009',
         description: 'Prácticas de realización de audiovisuales. Montador de vídeo en mesa analógica, player, operador de cámara y ayudante realización.',
-        images: [
-            'assets/trabajos/Televigo/Trab Televigo 1.jpg',
-            'assets/trabajos/Televigo/Trab Televigo 2.jpg',
-        ]
     },
     maraver: {
         name: 'Maraver Publicidad',
         icon: 'assets/icons/ico prac Maraver Publicidad.svg',
         date: '04 - 05/2013',
         description: 'Prácticas de diseño gráfico. Diseño de línea de bodas, cartelería, flyers, tarjetas de visita y vectorización de imágenes.',
-        images: [
-            'assets/trabajos/Maraver/Trab Maraver 1.jpg',
-            'assets/trabajos/Maraver/Trab Maraver 2.jpg',
-        ]
     }
 };
 
@@ -270,7 +258,7 @@ const volunteerData = {
         name: 'Cruz Roja',
         icon: 'assets/icons/ico vol Cruz Roja.svg',
         date: '09/2014 - Actualidad',
-        description: 'Mi experiencia principal se dividió en dos áreas: por un lado, la labor formativa y social, impartiendo clases de informática para personas mayores e inmigrantes, y participando en el reparto de alimentos y programas de ocio e integración juvenil. Por otro lado, me encargué de la parte visual mediante la creación de piezas gráficas para redes sociales. Mi enfoque combinó la gestión directa de actividades con el diseño de contenidos para dar visibilidad a los proyectos'
+        description: 'Mi experiencia principal se dividió en dos áreas: por un lado, la labor formativa y social, impartiendo clases de informática para personas mayores e inmigrantes, y participando en el reparto de alimentos y programas de ocio e integración juvenil. Por otro lado, me encargué de la parte visual mediante la creación de piezas gráficas para redes sociales. Mi enfoque combinó la gestión directa de actividades con el diseño de contenidos para dar visibilidad a los proyectos.'
     },
     hebe: {
         name: 'Asociación de Mediadores HEBE',
