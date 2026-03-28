@@ -1643,6 +1643,10 @@ body.dark-mode .nav-right li a:hover {
     color: var(--primary) !important;
 }
 
+body.dark-mode .menu-toggle {
+    color: #ffffff !important;
+}
+
 body.dark-mode .mobile-menu {
     background: #111;
 }

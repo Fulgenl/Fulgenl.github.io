@@ -498,6 +498,8 @@ function initCVButton() {
 // Modal Functions
 let carouselInterval;
 let currentCarouselIndex = 0;
+let currentModalImageCount = 0;
+const SWIPE_THRESHOLD = 50;
 
 function initModal() {
     const modal = document.getElementById('experience-modal');
@@ -540,15 +542,29 @@ function initModal() {
     
     document.addEventListener('keydown', (e) => {
         const lightbox = document.getElementById('lightbox');
+
         if (e.key === 'Escape') {
             closeModal();
             closeLightbox();
         }
-        if (lightbox && lightbox.classList.contains('show')) {
+
+        const modalIsOpen = modal && modal.classList.contains('show');
+        const lightboxIsOpen = lightbox && lightbox.classList.contains('show');
+
+        if (lightboxIsOpen) {
             if (e.key === 'ArrowLeft') {
                 navigateLightbox(-1);
             } else if (e.key === 'ArrowRight') {
                 navigateLightbox(1);
+            }
+            return;
+        }
+
+        if (modalIsOpen && currentModalImageCount > 0) {
+            if (e.key === 'ArrowLeft') {
+                goToSlide((currentCarouselIndex - 1 + currentModalImageCount) % currentModalImageCount);
+            } else if (e.key === 'ArrowRight') {
+                goToSlide((currentCarouselIndex + 1) % currentModalImageCount);
             }
         }
     });
@@ -589,7 +605,7 @@ function openModal(data) {
     if (modalDesc) modalDesc.textContent = data.description;
     
     // Set carousel images
-    if (carouselImages) {
+    if (carouselImages && carouselDots) {
         carouselImages.innerHTML = '';
         carouselDots.innerHTML = '';
         
@@ -617,12 +633,11 @@ function openModal(data) {
                 carouselDots.appendChild(dot);
             });
             
-            // Start auto-rotate carousel
             currentCarouselIndex = 0;
             currentModalImageCount = data.images.length;
+            updateCarousel();
             startCarousel(data.images.length);
             
-            // Add carousel event listeners
             const parentEl = carouselImages.parentElement;
             if (parentEl) {
                 // Remove old event listeners by cloning
@@ -649,17 +664,17 @@ function openModal(data) {
                         openLightbox(currentImg.src, data.images);
                     }
                 });
+
+                addSwipeSupportToModalCarousel(newParent);
             }
             
         } else {
-            // Hide carousel when no images and center content
             currentModalImageCount = 0;
             if (modalCarousel) modalCarousel.style.display = 'none';
             const modalBody = document.querySelector('.modal-body');
             if (modalBody) modalBody.classList.add('no-carousel');
         }
     } else {
-        // Also handle case when no images
         if (modalCarousel) modalCarousel.style.display = 'none';
         const modalBody = document.querySelector('.modal-body');
         if (modalBody) modalBody.classList.add('no-carousel');
@@ -672,8 +687,8 @@ function openModal(data) {
 function closeModal() {
     const modal = document.getElementById('experience-modal');
     const lightbox = document.getElementById('lightbox');
-    let carouselImages = document.getElementById('carousel-images');
-    let carouselDots = document.getElementById('carousel-dots');
+    const carouselImages = document.getElementById('carousel-images');
+    const carouselDots = document.getElementById('carousel-dots');
     
     if (modal) {
         modal.classList.remove('show');
@@ -703,22 +718,22 @@ function closeModal() {
 }
 
 function startCarousel(totalImages) {
+    if (!totalImages || totalImages <= 1) return;
+
     if (carouselInterval) {
         clearInterval(carouselInterval);
     }
+
     carouselInterval = setInterval(() => {
         currentCarouselIndex = (currentCarouselIndex + 1) % totalImages;
         updateCarousel();
     }, 5000);
 }
 
-let currentModalImageCount = 0;
-
 function goToSlide(index) {
     currentCarouselIndex = index;
     updateCarousel();
     
-    // Reset interval with current modal's image count
     if (carouselInterval) {
         clearInterval(carouselInterval);
     }
@@ -744,6 +759,61 @@ function updateCarousel() {
     }
 }
 
+function addSwipeSupportToModalCarousel(element) {
+    if (!element) return;
+
+    let startX = 0;
+    let startY = 0;
+    let endX = 0;
+    let endY = 0;
+
+    element.addEventListener('touchstart', (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        endX = startX;
+        endY = startY;
+
+        if (carouselInterval) {
+            clearInterval(carouselInterval);
+        }
+    }, { passive: true });
+
+    element.addEventListener('touchmove', (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+
+        endX = e.touches[0].clientX;
+        endY = e.touches[0].clientY;
+    }, { passive: true });
+
+    element.addEventListener('touchend', () => {
+        if (currentModalImageCount <= 1) {
+            if (currentModalImageCount > 0) {
+                startCarousel(currentModalImageCount);
+            }
+            return;
+        }
+
+        const diffX = endX - startX;
+        const diffY = endY - startY;
+
+        // Solo actuar si el gesto es claramente horizontal
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > SWIPE_THRESHOLD) {
+            if (diffX < 0) {
+                currentCarouselIndex = (currentCarouselIndex + 1) % currentModalImageCount;
+            } else {
+                currentCarouselIndex = (currentCarouselIndex - 1 + currentModalImageCount) % currentModalImageCount;
+            }
+            updateCarousel();
+        }
+
+        if (currentModalImageCount > 0) {
+            startCarousel(currentModalImageCount);
+        }
+    }, { passive: true });
+}
+
 // Lightbox Functions
 let lightboxImages = [];
 let lightboxCurrentIndex = 0;
@@ -751,7 +821,6 @@ let lightboxCurrentIndex = 0;
 function initLightbox() {
     const lightbox = document.getElementById('lightbox');
     const lightboxClose = document.querySelector('.lightbox-close');
-    const lightboxImg = document.getElementById('lightbox-img');
     
     if (lightboxClose) {
         lightboxClose.addEventListener('click', closeLightbox);
@@ -789,7 +858,50 @@ function initLightbox() {
             });
             lightbox.appendChild(nextBtn);
         }
+
+        addSwipeSupportToLightbox(lightbox);
     }
+}
+
+function addSwipeSupportToLightbox(element) {
+    if (!element) return;
+
+    let startX = 0;
+    let startY = 0;
+    let endX = 0;
+    let endY = 0;
+
+    element.addEventListener('touchstart', (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        endX = startX;
+        endY = startY;
+    }, { passive: true });
+
+    element.addEventListener('touchmove', (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+
+        endX = e.touches[0].clientX;
+        endY = e.touches[0].clientY;
+    }, { passive: true });
+
+    element.addEventListener('touchend', () => {
+        if (lightboxImages.length <= 1) return;
+
+        const diffX = endX - startX;
+        const diffY = endY - startY;
+
+        // Solo actuar si el gesto es claramente horizontal
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > SWIPE_THRESHOLD) {
+            if (diffX < 0) {
+                navigateLightbox(1);
+            } else {
+                navigateLightbox(-1);
+            }
+        }
+    }, { passive: true });
 }
 
 function openLightbox(src, images = []) {
@@ -816,6 +928,8 @@ function openLightbox(src, images = []) {
 }
 
 function navigateLightbox(direction) {
+    if (!lightboxImages.length) return;
+
     lightboxCurrentIndex = (lightboxCurrentIndex + direction + lightboxImages.length) % lightboxImages.length;
     const lightboxImg = document.getElementById('lightbox-img');
     if (lightboxImg) {
