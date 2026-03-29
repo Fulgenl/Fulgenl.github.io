@@ -5,6 +5,7 @@
 // Gallery Lightbox
 let galleryImages = [];
 let galleryIndex = 0;
+const GALLERY_SWIPE_THRESHOLD = 50;
 
 function initGalleryLightbox() {
     const lightbox = document.getElementById('lightbox');
@@ -58,6 +59,9 @@ function initGalleryLightbox() {
             navigateGallery(1);
         });
     }
+
+    // Swipe navigation for mobile
+    addSwipeSupportToGalleryLightbox(lightbox);
     
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
@@ -71,6 +75,47 @@ function initGalleryLightbox() {
             navigateGallery(1);
         }
     });
+}
+
+function addSwipeSupportToGalleryLightbox(element) {
+    if (!element) return;
+
+    let startX = 0;
+    let startY = 0;
+    let endX = 0;
+    let endY = 0;
+
+    element.addEventListener('touchstart', (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        endX = startX;
+        endY = startY;
+    }, { passive: true });
+
+    element.addEventListener('touchmove', (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+
+        endX = e.touches[0].clientX;
+        endY = e.touches[0].clientY;
+    }, { passive: true });
+
+    element.addEventListener('touchend', () => {
+        if (!galleryImages.length || galleryImages.length <= 1) return;
+
+        const diffX = endX - startX;
+        const diffY = endY - startY;
+
+        // Solo actuar si el gesto es claramente horizontal
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > GALLERY_SWIPE_THRESHOLD) {
+            if (diffX < 0) {
+                navigateGallery(1);
+            } else {
+                navigateGallery(-1);
+            }
+        }
+    }, { passive: true });
 }
 
 function openGalleryLightbox(src) {
@@ -115,6 +160,8 @@ function closeGalleryLightbox() {
 }
 
 function navigateGallery(direction) {
+    if (!galleryImages.length) return;
+
     galleryIndex = (galleryIndex + direction + galleryImages.length) % galleryImages.length;
     const lightboxImg = document.getElementById('lightbox-img');
     if (lightboxImg && galleryImages[galleryIndex]) {
