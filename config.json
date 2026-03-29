@@ -1,1 +1,20 @@
-{"site":{"title":"Fullgen - Portafolio","description":"Portafolio de Fulgencio López, diseñador gráfico y realizador de audiovisuales"},"colors":{"primary":"#1e89c4","dark":"#222222","gray":"#777777","light":"#ffffff"},"social":{"behance":"https://www.behance.net/Fulgenl","instagram":"https://www.instagram.com/fullgen7/","linkedin":"https://www.linkedin.com/in/fullgen/","youtube":"https://www.youtube.com/channel/UCfeKRQwgNfa6UZOGd2JAW3w","vimeo":"https://vimeo.com/fulgenl","email":"fulgenll@hotmail.com"}}
+{
+    "site": {
+        "title": "Fullgen - Portafolio",
+        "description": "Portafolio de Fulgencio López, diseñador gráfico y realizador de audiovisuales"
+    },
+    "colors": {
+        "primary": "#1e89c4",
+        "dark": "#222222",
+        "gray": "#777777",
+        "light": "#ffffff"
+    },
+    "social": {
+        "behance": "https://www.behance.net/Fulgenl",
+        "instagram": "https://www.instagram.com/fullgen7/",
+        "linkedin": "https://www.linkedin.com/in/fullgen/",
+        "youtube": "https://www.youtube.com/channel/UCfeKRQwgNfa6UZOGd2JAW3w",
+        "vimeo": "https://vimeo.com/fulgenl",
+        "email": "fulgenll@hotmail.com"
+    }
+}
