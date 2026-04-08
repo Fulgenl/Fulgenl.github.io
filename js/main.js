@@ -29,7 +29,7 @@ const experienceData = {
     seopuente: {
         name: 'SeoPuente',
         icon: 'assets/icons/ico exp Seo Puente.svg',
-        date: '2020 - 2021',
+        date: '01/2021 - 11/2021',
         description: 'En esta etapa me centré en el diseño web con WordPress, encargándome de la instalación, configuración y el desarrollo de paneles personalizados mediante CPTs. Mi labor incluyó el diseño gráfico de identidad visual y papelería, sumado a la edición de vídeo y motion graphics para mejorar el impacto visual. También gestioné la estrategia y creación de contenido para redes sociales, unificando la parte técnica con la creativa.',
         images: [
             'assets/trabajos/SeoPuente/Trab SeoPuente Auto Bahía Motor.png',
@@ -47,7 +47,7 @@ const experienceData = {
     fabrizzio: {
         name: 'Fabrizzio & Milanno',
         icon: 'assets/icons/ico exp Fabrizzio & Milanno.svg',
-        date: '2019 - 2020',
+        date: '01/2021 - 11/2021',
         description: 'En este proyecto lideré la creación de la presencia digital mediante el desarrollo de plataformas web funcionales y estéticas. Me encargué de definir la identidad visual y producir todo el material de papelería, ilustración y diseño gráfico publicitario necesario para la marca. Además, integré la edición de vídeo y el retoque fotográfico profesional para generar contenidos dinámicos que reforzaran el branding en redes sociales.',
         images: [
             'assets/trabajos/Fabrizzio & Milanno/Trab F&M Caja Femenina.jpg',
@@ -60,9 +60,9 @@ const experienceData = {
         ]
     },
     fullgen: {
-        name: 'Fullgen',
+        name: 'Fullgen (autónomo)',
         icon: 'assets/icons/ico exp fullgen.svg',
-        date: '2013 - 2021',
+        date: '02/2019 - 11/2021',
         description: 'Mi actividad principal es el desarrollo web en WordPress, abarcando la instalación, configuración de servidores y creación de CPTs a medida para un backend intuitivo. Desarrollo proyectos de diseño gráfico (identidad, papelería, ilustración) y producción audiovisual completa, incluyendo edición de vídeo, animación y motion graphics. Todo ello enfocado a la creación de contenido profesional para redes sociales.',
         images: [
             'assets/trabajos/Fullgen/Trab Fullgen Aterrados.jpg',
@@ -80,13 +80,13 @@ const experienceData = {
     integra: {
         name: 'Integra',
         icon: 'assets/icons/ico exp Integra.svg',
-        date: '2018 - 2019',
+        date: '09/2020 - 12/2020',
         description: 'Mi trabajo consistió en el diseño y desarrollo de páginas web utilizando WordPress y Bootstrap, asegurando un funcionamiento correcto tanto en el backend como en la parte visual. También estuve cubriendo necesidades de diseño gráfico (identidad y piezas publicitarias) y edición de vídeo profesional. El enfoque fue siempre ofrecer una solución técnica sólida junto a una estética cuidada para el cliente.'
     },
     didact: {
         name: 'Didact',
         icon: 'assets/icons/ico exp Didact.svg',
-        date: '2017 - 2018',
+        date: '04/2018 - 10/2018',
         description: 'Mi experiencia principal fue el desarrollo de aplicaciones nativas para Android, trabajando tanto la interfaz visual (UI) como la programación funcional en Java con Android Studio. Me encargué de la configuración de entornos y la gestión de bases de datos con Firebase. Además, apliqué mis conocimientos en diseño gráfico para la creación de interfaces intuitivas. Y de forma menor estuve generando contenido audiovisual y gráfico para la promociones.',
         images: [
             'assets/trabajos/Didact/Trab Didact Cartel.png',
@@ -97,25 +97,25 @@ const experienceData = {
     dieligen: {
         name: 'Die Ligen',
         icon: 'assets/icons/ico exp Die Ligen.svg',
-        date: '2016 - 2017',
+        date: '08/2016 - 06/2019',
         description: 'Mi labor principal consistió en la grabación de eventos deportivos. Encargándome de la operación de cámara y la gestión de archivos de vídeo. Realicé tareas de conversión de formatos y subida de contenidos a plataformas específicas, asegurando la calidad del material final.'
     },
     aliquindoi: {
         name: 'Aliquindoi',
         icon: 'assets/icons/ico exp Aliquindoi.svg',
-        date: '2015 - 2016',
+        date: '05/2016 - 07/2017',
         description: 'Mi trabajo principal fue el diseño gráfico orientado al sector servicios, encargándome de la creación de mapas, flyers, cartas en hostelería y tarjetas de visita.  Me ocupé tanto de la parte visual como de la preparación técnica de archivos para impresión. También apliqué mis conocimientos en diseño web e identidad visual para asegurar una imagen coherente, integrando edición fotográfica y maquetación profesional en cada proyecto.'
     },
     lx: {
         name: 'LX Espectáculos',
         icon: 'assets/icons/ico exp LX Espectáculos.svg',
-        date: '2014 - 2015',
+        date: '02/2016 - 05/2016',
         description: 'Durante este periodo sobretodo hice labores de diseño gráfico y la edición de vídeo para la promoción de eventos, piezas publicitarias y cartas. Me ocupé de la postproducción de vídeos de eventos, realizando retoques fotográficos profesionales y asegurando la calidad del material gráfico. Además, apliqué mis conocimientos en identidad visual para mantener una estética coherente en todas las piezas de comunicación y redes sociales.'
     },
     gummy: {
         name: 'Gummy Worm Company',
         icon: 'assets/icons/ico exp Gummy Worm Company.svg',
-        date: '2013 - 2014',
+        date: '11/2014 - 11/2019',
         description: 'Mi experiencia principal fue la ilustración y el diseño gráfico, abarcando desde la creación de personajes hasta el dibujo de storyboards para diversos proyectos.',
         images: [
             'assets/trabajos/Gummy Worm/Trab Gummy Worm Gummy Worm.jpg',
@@ -131,7 +131,7 @@ const experienceData = {
     arotorota: {
         name: 'Ayto de Rota',
         icon: 'assets/icons/ico exp Ayto. de Rota.svg',
-        date: '2012 - 2013',
+        date: '11/2014 - 05/2015',
         description: 'Mi labor se dividió en dos áreas principales: por un lado, el diseño gráfico y maquetación de contenidos institucionales y web, gestionando tanto la parte visual como funcional de la comunicación oficial. Por otro lado, me encargué de la producción audiovisual completa, incluyendo grabación y edición de vídeo, así como fotografía de eventos y noticias. En ambas facetas aseguré una estética profesional y la correcta postproducción de todos los materiales para su difusión.',
         images: [
             'assets/trabajos/Ayto Rota/Trab Ayto Rota Banners AREMSA.png',
@@ -147,7 +147,7 @@ const experienceData = {
     casamarket: {
         name: 'Casa Market',
         icon: 'assets/icons/ico exp Casa Market.svg',
-        date: '2011 - 2012',
+        date: '12/2013 - 05/2014',
         description: 'Mi labor fue el de fotógrafo de producto profesional, encargándome tanto de la captura técnica como de la edición y postproducción de las imágenes para su uso comercial. Además de la parte visual, trabajé en la parte funcional gestionando la subida y organización de contenidos en la plataforma web de la empresa. Mi labor incluyó la atención directa a clientes y la realización de diversos trabajos de diseño y vídeo para potenciar el catálogo digital de la marca.',
         images: [
             'assets/trabajos/Casa Market/Trab Casa Market Bombilla.jpg',
@@ -165,13 +165,13 @@ const experienceData = {
     bienestar: {
         name: 'Bienestar Corporativo',
         icon: 'assets/icons/ico exp Bienestar Corporativo.svg',
-        date: '2010 - 2011',
+        date: '10/2013 - 03/2014',
         description: 'En esta empresa mi trabajo se centró en el diseño gráfico de la identidad visual, encargándome piezas visuales de sus programas de salud laboral. Desarrollé presentaciones corporativas, folletos y recursos digitales.'
     },
     ekko: {
         name: 'EKKO',
         icon: 'assets/icons/ico exp EKKO.svg',
-        date: '2013 - 2021',
+        date: '02/2017 - 11/2021',
         description: 'Mi experiencia principal se centró en el diseño técnico y digital, encargándome tanto de la parte visual como de la operativa en la cadena de producción. Realicé la preparación de pliegues y la vectorización de diseños complejos, asegurando la máxima precisión para su posterior impresión o aplicación. Por otro lado, desarrollé la comunicación digital de la marca mediante la creación de newsletters y banners publicitarios, integrando el diseño gráfico con estrategias de marketing para optimizar la presencia online de la empresa.',
         images: [
             'assets/trabajos/EKKO/Trab Ekko Anubis.jpg',
